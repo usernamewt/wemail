@@ -1,0 +1,25 @@
+/* pages/home/index.wxss */
+
+.page-body {
+  width: 100%;
+}
+
+.scale-swiper {
+  height: 400rpx;
+}
+
+/* 图片基础样式 */
+.swiper-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 12rpx;
+  transition: all 0.3s ease; /* 添加过渡动画 */
+  transform: scale(0.9);     /* 默认缩放90% */
+  box-shadow: 0 4rpx 12rpx rgba(0,0,0,0.1);
+}
+
+/* 当前激活图片样式 */
+.swiper-image.active {
+  transform: scale(1);      /* 当前页恢复100% */
+  box-shadow: 0 8rpx 24rpx rgba(0,0,0,0.15);
+}

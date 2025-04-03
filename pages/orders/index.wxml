@@ -1,0 +1,3 @@
+<!--pages/orders/index.wxml-->
+<custom-navbar></custom-navbar>
+<text>pages/orders/index.wxml</text>

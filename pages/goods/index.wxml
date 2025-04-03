@@ -1,0 +1,2 @@
+<!--pages/goods/index.wxml-->
+<custom-navbar title="商品"></custom-navbar>

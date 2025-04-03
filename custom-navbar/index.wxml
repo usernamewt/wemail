@@ -1,0 +1,9 @@
+<view class="navbar" style="height: {{navBarHeight}}px; padding-top: {{statusBarHeight}}px;">
+  <!-- 渐变背景层 -->
+  <view class="navbar-bg"></view>
+  
+  <!-- 标题 -->
+  <view class="navbar-title">{{title}}</view>
+  
+  <!-- 可添加其他元素（返回按钮/搜索框等） -->
+</view>
