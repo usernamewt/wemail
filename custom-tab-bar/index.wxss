@@ -4,19 +4,19 @@
   bottom: 0;
   left: 0;
   right: 0;
-  height: 48px; /* 标准高度 */
+  height: 96rpx; /* 标准高度 */
   background: #fff;
   box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.1);
   z-index: 999;
-  border-radius: 48px;
+  border-radius: 96rpx;
 }
 
 /* iOS安全区域适配 */
 .custom-tab-bar.safe-area {
   padding-bottom: constant(safe-area-inset-bottom); /* iOS 11.0 */
   padding-bottom: env(safe-area-inset-bottom); /* iOS 11.2+ */
-  height: calc(48px + constant(safe-area-inset-bottom));
-  height: calc(48px + env(safe-area-inset-bottom));
+  height: calc(96rpx + constant(safe-area-inset-bottom));
+  height: calc(96rpx + env(safe-area-inset-bottom));
 }
 
 .tab-bar-item {

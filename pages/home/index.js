@@ -1,5 +1,5 @@
 // pages/home/index.js
-import {getNavAll} from "../../utils/api.js"
+import {getNavAll,goodsinhome} from "../../utils/api.js"
 Page({
 
   /**
@@ -41,6 +41,9 @@ Page({
     this.getTabBar().setData({ selected: 0 })
     getNavAll.getNavList().then(res=>{
       this.setData({navList:res.data})
+    })
+    goodsinhome.getHomeGoods().then(res=>{
+      console.log(res);
     })
   },
 

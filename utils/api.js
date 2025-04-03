@@ -20,4 +20,9 @@ export const getNavAll = {
   getNavList:()=>post("/nav/getAll"),
 }
 
+// 首页商品展示
+export const goodsinhome  = {
+  getHomeGoods:()=>post("/goods/getByCate")
+}
+
 // 其他模块...

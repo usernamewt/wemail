@@ -1,17 +1,59 @@
 <!--pages/home/index.wxml-->
-<custom-navbar></custom-navbar>
+<custom-navbar title="" mainHeight="120"></custom-navbar>
 <view class="container">
- 
-  <view class="page-body">
+  <view class="head-custom">
+    <view class="head-text">
+      <view>放个LOGO在这里</view>
+      <view>小程序描述</view>
+    </view>
+    <view class="head-img">
+      放个图片在这里
+    </view>
+  </view>
+  <view class="login-box">
+    <view>登录解锁更多功能</view>
+    <view class="login-btn">登录/注册</view>
+  </view>
+
+  <view class="page page-body">
     <view class="page-section page-section-spacing swiper">
-      <swiper  class="scale-swiper" current="{{current}}" bindchange="onSwipeChange" indicator-dots="{{true}}" indicator-type="expand"  circular="{{true}}" 	layout-type="{{'tinder'}}" 	previous-margin="60rpx"  
-      next-margin="60rpx"  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" >
+      <swiper class="scale-swiper" current="{{current}}" bindchange="onSwipeChange" indicator-dots="{{true}}" indicator-type="expand" circular="{{true}}" layout-type="{{'tinder'}}" previous-margin="60rpx" next-margin="60rpx" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
         <block wx:for="{{navList}}" wx:key="*this">
           <swiper-item style="border-radius: 20rpx;">
             <image style="width: calc(100vw - 120rpx); height: 200px;" class="swiper-image {{index === current ? 'active' : ''}}" mode="aspectFill" src="{{item.img_url}}"></image>
           </swiper-item>
         </block>
       </swiper>
+      <view>
+      </view>
+    </view>
+    <view class="goods-item">
+      <view class="goods">
+        特价商品
+      </view>
+
+
+    </view>
+    <view class="goods-item">
+      <view class="goods">
+        每日上新
+      </view>
+
+    </view>
+    <view class="goods-item">
+      <view class="goods">
+        精选活动
+      </view>
+    </view>
+    <view class="goods-item">
+      <view class="goods">
+        精选活动
+      </view>
+    </view>
+    <view class="goods-item">
+      <view class="goods">
+        精选活动
+      </view>
     </view>
   </view>
 </view>

@@ -4,6 +4,58 @@
   width: 100%;
 }
 
+.container {
+  margin-top: -250rpx;
+}
+.page-body {
+  background-color: aliceblue;
+}
+.head-custom {
+  width: 100vw;
+  padding: 20rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+}
+.head-text {
+  color: #fff;
+  margin-bottom: 60rpx;
+  font-weight: bolder;
+  font-size: 0.8rem;
+}
+
+.head-img {
+  color: #fff;
+}
+
+.login-box{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: calc(100vw - 120rpx);
+  padding: 40rpx;
+  border-radius: 20rpx;
+  box-shadow: 0 0 20px rgba(201,170,107,0.3);
+  height: 140rpx;
+  color: #f1e6c2;
+  margin-bottom: 40rpx;
+  background: linear-gradient(
+    135deg,
+    #2d1b07 25%,
+    #5c4b1a 50%,
+    #c9aa6b 75%,
+    #f1e6c2 100%
+  );
+  background-size: 200% 200%;
+  animation: gradientShift 8s ease infinite;
+}
+
+/* @keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+} */
+
 .scale-swiper {
   height: 400rpx;
 }
@@ -15,11 +67,25 @@
   border-radius: 12rpx;
   transition: all 0.3s ease; /* 添加过渡动画 */
   transform: scale(0.9);     /* 默认缩放90% */
-  box-shadow: 0 4rpx 12rpx rgba(0,0,0,0.1);
 }
 
 /* 当前激活图片样式 */
 .swiper-image.active {
   transform: scale(1);      /* 当前页恢复100% */
   box-shadow: 0 8rpx 24rpx rgba(0,0,0,0.15);
+}
+
+.goods-item {
+  margin: 40rpx 0;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  
+}
+
+.goods {
+  background-color: #fff;
+  width: calc(100vw - 120rpx);
+  padding: 40rpx;
+  border-radius: 20rpx;
 }

@@ -1,4 +1,5 @@
 <view class="navbar" style="height: {{navBarHeight}}px; padding-top: {{statusBarHeight}}px;">
+
   <!-- 渐变背景层 -->
   <view class="navbar-bg"></view>
   
