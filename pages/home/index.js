@@ -1,5 +1,5 @@
 // pages/home/index.js
-import {getNavAll,goodsinhome} from "../../utils/api.js"
+import {getNavAll,goodsinhome,userApi} from "../../utils/api.js"
 Page({
 
   /**
@@ -11,11 +11,29 @@ Page({
     vertical: false,
     autoplay: false,
     interval: 2000,
-    duration: 500,current: 0
+    duration: 500,current: 0,
+    prodNavList:[],
+    isLogin:getApp().globalData.userToken
+  },
+  click(e){
+    console.log(e.target.dataset.value);
+    wx.navigateTo({
+      url: '/pages/goodDetail/index?id='+e.target.dataset.value.id,
+    })
   },
 
+  login() {
+    wx.login({
+      success: (res) => {
+        const {code} = res;
+        userApi.login({code:code}).then(logininfo=>{
+          getApp().globalData.userToken = logininfo.data
+          wx.setStorageSync('token',logininfo.data)
+        })
+      },
+    })
+  },
   onSwipeChange(e) {
-    console.log(e.detail);
     this.setData({
       current: e.detail.current
     })
@@ -24,7 +42,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    if(wx.getStorageSync("token")){
+      this.setData({
+        isLogin:true
+      })
+    }
   },
 
   /**
@@ -43,7 +65,25 @@ Page({
       this.setData({navList:res.data})
     })
     goodsinhome.getHomeGoods().then(res=>{
-      console.log(res);
+      let goods = res.data.map(el=>{
+        el.type = el.classification.cate_name
+        return el
+      });
+      goods = goods.reduce((acc,current)=>{
+        const { type, ...rest } = current;
+        if (!acc[type]) {
+          acc[type] = {
+            img:current.classification.cate_img,
+            goods:[],
+            type:current.type
+          }; // 如果该 type 不存在，初始化一个空数组
+        }
+        acc[type].goods.push(rest); // 将当前对象（排除 type）加入对应分类
+        return acc;
+      },{})
+      this.setData({
+        prodNavList:Object.values(goods)
+      })
     })
   },
 

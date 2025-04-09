@@ -3,7 +3,8 @@
     "pages/home/index",
     "pages/goods/index",
     "pages/category/index",
-    "pages/orders/index"
+    "pages/orders/index",
+    "pages/goodDetail/index"
   ],
     "window": {
       "navigationBarTextStyle": "white",
@@ -18,7 +19,10 @@
   "usingComponents": {
     "van-button": "@vant/weapp/button/index",
     "van-cell": "@vant/weapp/cell/index",
-    "custom-navbar": "/custom-navbar/index"
+    "custom-navbar": "/custom-navbar/index",
+    "van-col":"@vant/weapp/col/index",
+    "van-row":"@vant/weapp/row/index",
+    "van-nav-bar":"@vant/weapp/nav-bar/index"
   },
   "tabBar": {
     "custom": true,

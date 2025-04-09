@@ -80,12 +80,45 @@
   display: flex;
   justify-content: center;
   box-sizing: border-box;
-  
+  flex-wrap: wrap;
 }
 
 .goods {
   background-color: #fff;
   width: calc(100vw - 120rpx);
   padding: 40rpx;
+}
+
+.items {
+  background-color: #fff;
+  width: calc(100vw - 120rpx);
+  padding: 40rpx;
   border-radius: 20rpx;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  position: relative;
+  column-gap: 40rpx;
+  row-gap: 28rpx;
+}
+
+.bimg {
+  width: 100%;
+  height: 160rpx;
+}
+
+.infos {
+  position: relative;
+}
+
+.pd-name {
+  position: absolute;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  background-color: rgba(0,0,0,0.3);
+  color: #fff;
 }

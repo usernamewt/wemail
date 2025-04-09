@@ -20,6 +20,10 @@ const request = (options, retryCount = 0) => {
   }
 
   return new Promise((resolve, reject) => {
+    if(wx.getStorageSync('token')){
+      console.log(wx.getStorageSync('token'));
+      header["Authorization"] = `Bearer ${wx.getStorageSync('token')}`
+    }
     wx.request({
       url: `${getApp().globalData.baseUrl}${options.url}`,
       method: options.method || 'GET',

@@ -1,0 +1,60 @@
+/* pages/goodDetail/index.wxss */
+.swiper-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 12rpx;
+  transition: all 0.3s ease; /* 添加过渡动画 */
+  transform: scale(0.9);     /* 默认缩放90% */
+}
+
+/* 当前激活图片样式 */
+.swiper-image.active {
+  transform: scale(1);      /* 当前页恢复100% */
+  box-shadow: 0 8rpx 24rpx rgba(0,0,0,0.15);
+}
+
+.scale-swiper {
+  height: 400rpx;
+}
+
+.paying {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;flex-wrap: nowrap;
+  padding: 10rpx 0;
+  justify-content: space-between;
+  -webkit-box-shadow: 0px -5px 11px 3px rgba(192,198,200,0.89);
+  box-shadow: 0px -5px 11px 3px rgba(192,198,200,0.89);
+}
+.safe-area {
+  padding-bottom: constant(safe-area-inset-bottom); /* iOS 11.0 */
+  padding-bottom: env(safe-area-inset-bottom); /* iOS 11.2+ */
+  height: calc(48rpx + constant(safe-area-inset-bottom));
+  height: calc(48rpx + env(safe-area-inset-bottom));
+}
+
+.price {
+  padding: 20rpx;
+  border: 1rpx solid #eee;
+  border-radius: 10rpx;
+  text-align: center;
+  height: 50rpx;
+  line-height: 50rpx;
+}
+
+.add {
+  margin:0 20rpx;
+}
+
+.chat {
+  margin:0 20rpx;
+}
+
+.m-top {
+  background:#D4EFFF;
+background:linear-gradient(to bottom left,#D4EFFF 0%,#E8D3E8 50%,#FFEDD6 100%);
+}
+.van-nav-bar{
+  padding-top: 0 !important;
+}

@@ -12,7 +12,7 @@
   </view>
   <view class="login-box">
     <view>登录解锁更多功能</view>
-    <view class="login-btn">登录/注册</view>
+    <view class="login-btn" bind:tap="login">{{isLogin?"欢迎登录":"登录/注册"}}</view>
   </view>
 
   <view class="page page-body">
@@ -24,35 +24,16 @@
           </swiper-item>
         </block>
       </swiper>
-      <view>
-      </view>
     </view>
-    <view class="goods-item">
+    <view class="goods-item" wx:for="{{prodNavList}}" wx:key="type">
       <view class="goods">
-        特价商品
+        {{item.type}}
       </view>
-
-
-    </view>
-    <view class="goods-item">
-      <view class="goods">
-        每日上新
-      </view>
-
-    </view>
-    <view class="goods-item">
-      <view class="goods">
-        精选活动
-      </view>
-    </view>
-    <view class="goods-item">
-      <view class="goods">
-        精选活动
-      </view>
-    </view>
-    <view class="goods-item">
-      <view class="goods">
-        精选活动
+      <view class="items">
+        <view class="infos" wx:for="{{item.goods}}" wx:key="id">
+          <image class="bimg" bindtap="click" data-value="{{item}}" src="{{item.head_img}}" mode="aspectFit" />
+          <view class="pd-name" bindtap="click" data-value="{{item}}">{{item.product_name}}</view>
+        </view>
       </view>
     </view>
   </view>

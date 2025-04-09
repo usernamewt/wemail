@@ -1,0 +1,32 @@
+<!--pages/goodDetail/index.wxml-->
+<view class="detail-container">
+<view style="height: {{statusBarHeight+47}}px" class="m-top"></view>
+  <van-nav-bar
+  title="{{title}}"
+  right-text="搜索"
+  left-text="返回"
+  left-arrow
+  bind:click-left="leftClick"
+/>
+
+<view class="page-section page-section-spacing swiper" style="margin-bottom: 40rpx;">
+  <swiper class="scale-swiper" current="{{current}}" bindchange="onSwipeChange" indicator-dots="{{true}}" indicator-type="expand" circular="{{true}}" layout-type="{{'tinder'}}" previous-margin="60rpx" next-margin="60rpx" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{navList}}" wx:key="*this">
+      <swiper-item style="border-radius: 20rpx;">
+        <image style="width: calc(100vw - 120rpx); height: 200px;" class="swiper-image {{index === current ? 'active' : ''}}" mode="aspectFill" src="{{item}}"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<rich-text nodes="{{datas.detail}}"></rich-text>
+<view class="paying {{isIPhoneX ? 'safe-area' : ''}}">
+ <view style="display: flex;flex-wrap: nowrap;">
+  <view class="price chat">客服</view>
+  <view class="price">收藏</view>
+ </view>
+ <view style="display: flex;flex-wrap: nowrap;"><view class="price">原价${{datas.original_price}}</view>
+ <view class="price add">{{datas.sale_price}}加入购物车</view></view>
+ 
+</view>
+</view>
+

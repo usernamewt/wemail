@@ -3,7 +3,7 @@ import { get, post } from '../utils/request'
 
 // 用户相关接口
 export const userApi = {
-  login: (data) => post('/user/login', data),
+  login: (data) => post('/user/wxlogin', data),
   getUserInfo: () => get('/user/info'),
   updateProfile: (data) => post('/user/update', data)
 }
@@ -23,6 +23,11 @@ export const getNavAll = {
 // 首页商品展示
 export const goodsinhome  = {
   getHomeGoods:()=>post("/goods/getByCate")
+}
+
+// 商品详情
+export const goodDetail = {
+  getGoodsDetail:(data)=>post("/goods/getById",data)
 }
 
 // 其他模块...
