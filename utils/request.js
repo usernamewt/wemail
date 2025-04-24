@@ -19,10 +19,15 @@ const request = (options, retryCount = 0) => {
     ...options.header
   }
 
+  const whiteList = ['/user/wxlogin','/nav/getAll','/goods/getByCate']
+
   return new Promise((resolve, reject) => {
+    
     if(wx.getStorageSync('token')){
-      console.log(wx.getStorageSync('token'));
       header["Authorization"] = `Bearer ${wx.getStorageSync('token')}`
+    }
+    if(whiteList.includes(options.url) ){
+      delete header['Authorization']
     }
     wx.request({
       url: `${getApp().globalData.baseUrl}${options.url}`,
@@ -86,7 +91,7 @@ const handleTokenExpired = () => {
     content: '登录已过期，请重新登录',
     success(res) {
       if (res.confirm) {
-        wx.navigateTo({ url: '/pages/login/login' })
+        wx.navigateTo({ url: '/pages/home/index' })
       }
     }
   })

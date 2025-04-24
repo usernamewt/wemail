@@ -18,14 +18,21 @@
     </block>
   </swiper>
 </view>
+<view class="prod-desc">
+  <view class="price">
+    <view>{{datas.sale_price}}</view>
+    <view>仅剩{{datas.stock}}件</view>
+  </view>
+</view>
+
 <rich-text nodes="{{datas.detail}}"></rich-text>
 <view class="paying {{isIPhoneX ? 'safe-area' : ''}}">
  <view style="display: flex;flex-wrap: nowrap;">
   <view class="price chat">客服</view>
   <view class="price">收藏</view>
  </view>
- <view style="display: flex;flex-wrap: nowrap;"><view class="price">原价${{datas.original_price}}</view>
- <view class="price add">{{datas.sale_price}}加入购物车</view></view>
+ <view style="display: flex;flex-wrap: nowrap;"><view class="price">加入购物车</view>
+ <view class="price add">立即购买</view></view>
  
 </view>
 </view>
